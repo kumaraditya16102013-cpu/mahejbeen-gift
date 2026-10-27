@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For Mahejbeen 💖</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;overflow-x:hidden;
+ background:radial-gradient(circle at top,#68154f,#18051f 70%);
+ color:white;font-family:sans-serif;text-align:center;
+ display:flex;align-items:center;justify-content:center;
+}
+.card{
+ width:88%;max-width:420px;padding:28px 20px;
+ border:1px solid #ff8acb;border-radius:25px;
+ background:#ffffff10;box-shadow:0 0 35px #ff249b;
+ position:relative;z-index:2;
+}
+h1{color:#ffb5de;text-shadow:0 0 15px #ff3ca6}
+.heart{font-size:70px;animation:beat 1s infinite}
+button{
+ background:linear-gradient(90deg,#ff3c9e,#a84dff);
+ border:0;border-radius:25px;padding:14px 23px;
+ color:white;font-size:17px;margin:12px;
+}
+#secret{display:none;line-height:1.8}
+.flower{position:fixed;top:-40px;animation:fall 6s linear forwards;z-index:1}
+@keyframes beat{50%{transform:scale(1.2)}}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+</style>
+</head>
+<body>
+<div class="card">
+ <div class="heart">💖</div>
+ <p>A LITTLE SURPRISE FOR</p>
+ <h1>Mahejbeen 🌹</h1>
+ <p>Someone made a little something just for you...</p>
+ <button onclick="openGift()">Open Your Gift 🎁</button>
+ <div id="secret">
+  <h2>Dear Mahejbeen 💗</h2>
+  <p>Tumhari smile tumhari duniya ko aur khoobsurat banaye.</p>
+  <p>Tumhare har din mein khushiyan, har sapne mein umeed aur har kadam par kamyabi ho. ✨</p>
+  <p>Keep smiling and always be yourself. 🌸</p>
+  <div style="font-size:35px">🌹💝🌹</div>
+  <h3>Made with care by Aditya ❤️</h3>
+ </div>
+</div>
+<script>
+function openGift(){
+ document.getElementById('secret').style.display='block';
+ document.querySelector('button').style.display='none';
+}
+const symbols=['💗','🌸','✨','💕','🌹'];
+setInterval(()=>{
+ let e=document.createElement('div');
+ e.className='flower';
+ e.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+ e.style.left=Math.random()*100+'vw';
+ e.style.fontSize=(20+Math.random()*20)+'px';
+ document.body.appendChild(e);
+ setTimeout(()=>e.remove(),6000);
+},350);
+</script>
+</body>
+</html>
